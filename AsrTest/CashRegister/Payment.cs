@@ -12,8 +12,10 @@ namespace AsrTest.CashRegister
     {
         private int priceReplaceWheels = 300;
         private int priceReplaceOil = 200;
-        private int inputCash;        
+        private int inputCash;
 
+
+        public List<OrderLine> OrderLines = new List<OrderLine>();
 
         public void PayChoice(string chosenTool)
         {
@@ -66,11 +68,11 @@ namespace AsrTest.CashRegister
             }
             else { Console.WriteLine("{0} replaced\n", chosenTool); }
             SaveCashReceipt(chosenTool, chosenToolPrice, overpayment);
-        }       
+        }
         public void SaveCashReceipt(string chosenTool, int chosenToolPrice, int overpayment)
         {
-               //myList.Add(new CashReceipt(chosenTool, chosenToolPrice, overpayment));
-        }        
+            //myList.Add(new CashReceipt(chosenTool, chosenToolPrice, overpayment));
+        }
     }
 }
 
