@@ -11,13 +11,24 @@ namespace AsrTest.Main
 {
     internal class AutoRepairShop
     {
+        private IService _oilCheckService; // global class field.
+
+        public AutoRepairShop(IService oilCheckService)
+        {
+            _oilCheckService = oilCheckService;
+        }
+
         Payment payment = new Payment();
         ExeptTry exeptTry = new ExeptTry();
         CashReceiptArchive cashReceiptArchive = new CashReceiptArchive();
 
-        private IService oilCheckService;
         public IService OilCheckService
-        { get { return oilCheckService; } }
+        {
+            get
+            {
+                return _oilCheckService;
+            }
+        }
 
 
         private IService oilReplaceService;
@@ -33,8 +44,7 @@ namespace AsrTest.Main
         public IService ReplacesOilAndWheels
         { get { return replacesOilAndWheels; } }
         public void Start()
-        {
-            oilCheckService = new OilCheckService();
+        {            
             //oilReplaceService = new ReplaceOilService(payment);
             //wheelsReplaceService = new ReplaceWheelService(payment);
             replacesOilAndWheels = new ReplacesOilAndWheels(payment);

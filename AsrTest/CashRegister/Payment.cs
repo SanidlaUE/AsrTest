@@ -69,7 +69,7 @@ namespace AsrTest.CashRegister
         }       
         public void SaveCashReceipt(string chosenTool, int chosenToolPrice, int overpayment)
         {
-               myList.Add(new CashReceipt(chosenTool, chosenToolPrice, overpayment));
+               //myList.Add(new CashReceipt(chosenTool, chosenToolPrice, overpayment));
         }        
     }
 }
